@@ -1,0 +1,311 @@
+﻿[Start]
+This is Sargent—bzzzzttt.
+We got report of a missing dame on -bzzzzzzz- street. If you could -zzzzz- someone.
+<>I’m sending someone now.[Event.Wait]
+;
+
+
+[Event.Wait]
+<>. . .
+;
+
+
+
+[DialDick1.1]
+Where am I going? Over.
+<>Head to the Sergeant. Over. [Dick.1.1.S][Dick.1.1.F]
+<>Whoops, sorry to bother you. Over.[Event.Wait]
+;
+
+
+[DialBarb1.1]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to the Sergeant.[Barb.1.1.S][Barb.1.1.F][Barb.1.1.F][Barb.1.1.F]
+<>Whoops, sorry to bother you.[Event.Wait]
+;
+
+
+[DialJack1.1]
+No need to bust my chops, just tell me where to go.
+<>Head to the Sergeant.[Jack.1.1.S][Jack.1.1.F][Jack.1.1.F]
+<>Whoops, sorry to bother you.[Event.Wait]
+;
+
+
+[Dick.1.1.S]{Dick.1.1}
+Got word she was last seen at Pete’s Malts with ‘er boyfriend. I’ll try to track ‘him down. Over.
+<>Thanks, Dick. Over.[Event.Wait]
+;
+
+
+[Dick.1.1.F]
+This bird’s sending me on a goose chase, Dispatcher. I got nothing.
+<>I appreciate the update.[Event.Wait]
+;
+
+
+[Barb.1.1.S]{Barb1.1}
+Looks like she was last at Pete’s Malts with her guy. Nobody’s seen them since, Hun, but I’ll keep an eye out.
+<>Thanks, Barb. I owe you lunch.[Event.Wait]
+;
+
+
+[Barb.1.1.F]
+I went to Pete’s Malts, where we last saw the—bzzzzzz—but I got stood up. Promise you’ll come next time?
+<>I do like a malt. Maybe next time, Barb.[Event.Wait]
+;
+
+
+[Jack.1.1.S]
+Zzzzzz—scoured Pete’s Malts, found an old friend. Told me he saw the two doves—bzzzzzzttt—down to lover’s lane. I’ll take a peek, over.[DSA.1.3]
+<>Keep me updated.[Event.Wait]
+;
+
+
+[Jack.1.1.F]
+I ain’t got nothing, Dispatcher. Cashier at Pete’s Malts said he saw the two leave, but—zzzzzzttttt—they went.
+<>Damn. [Event.Wait]
+;
+
+
+
+
+[DSA.1.2]
+This is Sargent—bzzzz. We got a young girl’s body, believed to be—bbzzzzz. Report.
+<>I’ll send someone your way.[Event.Wait]
+;
+
+
+[DialDick1.2]
+Where am I going? Over.
+<>Head to the Sergeant. Over.[Dick.1.2.S][Dick.1.2.S][Dick.1.2.F][Dick.1.2.F]
+<>Whoops, sorry to bother you. Over.[Event.Wait]
+;
+
+
+[DialBarb1.2]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to the Sergeant.[Barb.1.2.S]
+<>Whoops, sorry to bother you.[Event.Wait]
+;
+
+
+[DialJack1.2]
+No need to bust my chops, just tell me where to go.
+<>Head to the Sergeant.[Jack.1.2.S][Jack.1.2.S][Barb.1.2.S][Barb.1.2.S][Jack.1.2.F]
+<>Whoops, sorry to bother you.[Event.Wait]
+;
+
+
+[Dick1.2.S]{Dick.1.2}
+Poor bird’s been gutted. We found—zzzzzt—that has her boyfriend’s name on it. We’re gonna track him down, over.
+<>She didn’t deserve that. Go get ‘em, Dick. Over.[Event.Wait]
+;
+
+
+[Dick.1.2.F]
+We found—zzzzt. No sign of the weapon, and the boyfriend has an alibi. We’re gonna have to pass this on to State. Over.
+<>Thanks for looking. Over.[Event.Wait]
+;
+
+
+[Barb.1.2.S]{1.2}
+I examined the poor girl’s body. Looks like there’s been a struggle, and she’s missing a lot of her clothing. I think her boyfriend tried somethin’ foul and she got spooked. Poor girl.
+<>That’s disgusting. We need to catch him. Send out an APB.[Event.Wait]
+;
+
+
+[Jack.1.2.S]{1.2}
+Someone cut the poor girl open with a—bbzzzzt—with, get this, the boyfriend’s name on it. It looks like she was in a fight, too, with bruises on her arms and torn clothes. We’re looking for him now.
+<>Christ, Jack. I’ll have the Sergeant tell her parents.[Event.Wait]
+;
+
+
+[Jack.1.2.F]
+Looks like we found the girl. No weapon, no footprints, no nothing. Whoever did this was clean. The boyfriend has an alibi, Dispatcher. We’re stuck.
+<>Damnit! Thanks for your work, Jack.[Event.Wait]
+;
+
+
+
+
+[DSA.1.3]
+Dispatcher, this is Jack. I found the girl and took ‘er home.
+<>Let’s hope she stays there. Thanks, Jack.[Event.Wait]
+;
+
+
+[DSA1.4]
+This is Sargent—zzzzzzttttt. We need all hands to canvass for the boyfriend. Report.
+<>I’ll have someone there as quick as I can.[Event.Wait]
+;
+
+
+[DialDick.1.4]
+Where am I going? Over.
+<>Head to the Sergeant. Over. [Dick.1.4.S][Dick.1.4.S][Dick.1.4.S][Dick.1.4.F]
+<>Whoops, sorry to bother you. Over.[Event.Wait]
+;
+
+
+[DialBarb.1.4]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to the Sergeant.[Barb.1.4.F]
+<>Whoops, sorry to bother you.[Event.Wait]
+;
+
+
+[DialJack.1.4]
+No need to bust my chops, just tell me where to go.
+<>Head to the Sergeant.[Jack.1.4.S][Jack.1.4.S][Jack.1.4.F]
+<>Whoops, sorry to bother you.[Event.Wait]
+;
+
+
+[Dick.1.4.S]
+Dispatcher, this is Dick. Over.
+<Dick.1.2> How did it go? Over.[1.4.Bail.Dick]{!Dick.1.2}
+<1.2> How did it go, Dick? Over.[1.4.Arrest.Dick]
+;
+
+
+[1.4.Bail.Dick] {!Dick.1.2}
+His dad posted bail. Something tells me this is the last we’ll see of the kid. Over.
+<>That miscreant. Maybe we’ll get lucky and someone’ll pick him up.[Event.Wait]
+;
+
+
+[1.4.Arrest.Dick] {!1.2}
+We caught the kid. Slime ball wanted to post bail, but we had enough—zzzzzt—to convince the judge otherwise. He’ll be in jail ‘til he’s 50, Dispatcher. He deserves it. Over.
+<>Another scoundrel where he belongs. Good work.[Event.Wait]
+;
+
+
+[Barb.1.4.F]
+Hun, we tore this town apart but—zzzzt. I’m afraid he’s skipped town.
+<>Someone contact the press. We’ll have his mug on every paper in town.[Event.Wait]
+;
+
+
+[Jack.1.4.S]
+Dispatcher, this is Jack.
+<Dick.1.2> What’s the skinny, Jack?[1.4.Bail.Jack]
+<1.2> What is it?[1.4.Arrest.Jack]
+
+
+[1.4.Bail.Jack]
+We caught the boyfriend, Dispatcher. His—bbzzzzz—father posted bail, though. We didn’t have enough to convince the judge to hold the kid. I’m afraid that might be the last we see of—zzzzttt.
+<>That miscreant! We’ve done all we can.[Event.Wait]
+;
+
+
+[1.4.Arrest.Jack]
+We caught the boyfriend, Dispatcher. His—bbzzzzz—father tried to post bail, but we talked to the Judge. That kid’s gonna be in jail until he’s bald.
+<>Good work, Jack.[Event.Wait]
+;
+
+
+[Jack.1.4.F]
+I’ve hunted all over town, but I can’t find him, Dispatcher. I hope that kid didn’t skip town.
+<>Someone contact the press. We’ll have his mug on every paper in town.[Event.Wait]
+;
+
+
+________________
+
+
+[DS2.1 Start]
+Dispatcher, this is Sarge--zzzzzttt. We have a report that two men are fighting at Trixie’s Bar on--bzzzzzzzzzz. Send back--bbbbbbzzzz.
+<>Backup incoming, Sargeant.[Event.Wait]
+;
+
+
+[DialDick.2.1]
+Where am I going? Over.
+<>Head to the Sergeant. Over.[Dick.2.1.S]
+<>Whoops, sorry to bother you. Over.[Event.Wait]
+;
+
+
+[DialBarb.2.1]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to the Sergeant.[Barb.2.1.S][Barb.2.1.S][Barb.2.1.S][Barb.2.1.S][Barb.2.1.F][Barb.2.1.F][Barb.2.1.F]
+<>Whoops, sorry to bother you.[Event.Wait]
+;
+
+
+[DialJack.2.1]
+No need to bust my chops, just tell me where to go.
+<>Head to the Sergeant.[Jack.2.1.S][Jack.2.1.S][Jack.2.1.S][Jack.2.1.F]
+<>Whoops, sorry to bother you.[Event.Wait]
+;
+
+
+[Dick.2.1.S] {2.1.Interrogation}
+We caught the two men, Dispatcher. Looks like they got in a fight o’er drug money. We’re taking them in for questioning. Over.
+<>Great. Thank you, Dick. Over.[Event.Wait]
+;
+
+
+[Dick.2.1.F] {2.1.Wound}
+That was a disaster. One man dead with a--zzzz--stuck in ‘is head, one arrested. Don’t know what else we could do here, Dispatcher. Over.
+<>Take care, Dick. Over.[Event.Wait]
+;
+
+
+[Barb.2.1.S] {2.1.SavedLife}
+That was a right mess you sent me to. Two men smashing--zzzzz--over each other’s heads. Had to send him to the hospital!
+He seemed repentant, though.
+<>Good, thank you. I hope we can get some information from him.[Event.Wait]
+;
+
+
+[Barb.2.1.F]
+I got there and the two guys are nothin’ more than bruises. The Sargeant took them away in cuffs. Not much else we could’ve done.
+<>Thanks, Barb.[Event.Wait]
+;
+
+
+[Jack.2.1.S]
+Sargeant and I arrested two men. It looks like they had something personal on the other one, but neither one is talking.
+<>It’s up to the guards, now. Thanks.[Event.Wait]
+;
+
+
+[Jack.2.1.F]
+One of the guys dropped, the other having nailed him with--bzzzzzz. We arrested the other and took him in, but it doesn’t look like there’s anything else we can do.
+<>I appreciate it, Jack.[Event.Wait]
+;
+
+
+________________
+
+
+[DS3:3.1]
+Dispatcher, this is KB11.Bzzzzzzzzt--have a situation at the church--zzzzz--vadals. Please report.
+;
+
+
+[DialDick.3.1]
+Where am I going? Over.
+<>Head to unit KB11. Over.[Dick.3.1.S][Dick.3.1.F][Dick.3.1.F][Dick.2.1.F]
+<>Whoops, sorry to bother you. Over.
+;
+
+
+[DialBarb.3.1]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to unit KB11.
+<>Whoops, sorry to bother you.
+;
+
+
+[DialJack.3.1]
+No need to bust my chops, just tell me where to go.
+<>Head to unit KB11.[Jack.2.1.S][Jack.2.1.S][Jack.2.1.S][Jack.2.1.F]
+<>Whoops, sorry to bother you.

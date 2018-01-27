@@ -1,0 +1,490 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff15f0180df5644bb530ae30f30ecf2, type: 3}
+  m_Name: GameEventDatabase
+  m_EditorClassIdentifier: 
+  database:
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: DialDick1.1
+    Text: "Where am I going? Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Head to the Sergeant. Over. '
+      Targets:
+      - Dick.1.1.S
+      - Dick.1.1.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialBarb1.1
+    Text: "Hello, Dahling. Finally takin\u2019 me to lunch?\r\n. . .No? One of these
+      days. Where are you sendin\u2019 me, then?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant.
+      Targets:
+      - Barb.1.1.S
+      - Barb.1.1.F
+      - Barb.1.1.F
+      - Barb.1.1.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you.
+      Targets:
+      - Start
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialJack1.1
+    Text: "No need to bust my chops, just tell me where to go.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant.
+      Targets:
+      - Jack.1.1.S
+      - Jack.1.1.F
+      - Jack.1.1.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: DialDick1.2
+    Text: "Where am I going? Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant. Over.
+      Targets:
+      - Dick.1.2.S
+      - Dick.1.2.S
+      - Dick.1.2.F
+      - Dick.1.2.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialBarb1.2
+    Text: "Hello, Dahling. Finally takin\u2019 me to lunch?\r\n. . .No? One of these
+      days. Where are you sendin\u2019 me, then?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant.
+      Targets:
+      - Barb.1.2.S
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialJack1.2
+    Text: "No need to bust my chops, just tell me where to go.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant.
+      Targets:
+      - Jack.1.2.S
+      - Jack.1.2.S
+      - Barb.1.2.S
+      - Barb.1.2.S
+      - Jack.1.2.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: DialDick.1.4
+    Text: "Where am I going? Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Head to the Sergeant. Over. '
+      Targets:
+      - Dick.1.4.S
+      - Dick.1.4.S
+      - Dick.1.4.S
+      - Dick.1.4.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialBarb.1.4
+    Text: "Hello, Dahling. Finally takin\u2019 me to lunch?\r\n. . .No? One of these
+      days. Where are you sendin\u2019 me, then?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant.
+      Targets:
+      - Barb.1.4.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialJack.1.4
+    Text: "No need to bust my chops, just tell me where to go.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant.
+      Targets:
+      - Jack.1.4.S
+      - Jack.1.4.S
+      - Jack.1.4.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 1.4.Bail.Dick
+    Text: "\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - Dick.1.2
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: Jack.1.4.S
+    Text: "Dispatcher, this is Jack.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: DialDick.2.1
+    Text: "Where am I going? Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant. Over.
+      Targets:
+      - Dick.2.1.S
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialBarb.2.1
+    Text: "Hello, Dahling. Finally takin\u2019 me to lunch?\r\n. . .No? One of these
+      days. Where are you sendin\u2019 me, then?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant.
+      Targets:
+      - Barb.2.1.S
+      - Barb.2.1.S
+      - Barb.2.1.S
+      - Barb.2.1.S
+      - Barb.2.1.F
+      - Barb.2.1.F
+      - Barb.2.1.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialJack.2.1
+    Text: "No need to bust my chops, just tell me where to go.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant.
+      Targets:
+      - Jack.2.1.S
+      - Jack.2.1.S
+      - Jack.2.1.S
+      - Jack.2.1.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: DialDick.3.1
+    Text: "Where am I going? Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to unit KB11. Over.
+      Targets:
+      - Dick.3.1.S
+      - Dick.3.1.F
+      - Dick.3.1.F
+      - Dick.2.1.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialBarb.3.1
+    Text: "Hello, Dahling. Finally takin\u2019 me to lunch?\r\n. . .No? One of these
+      days. Where are you sendin\u2019 me, then?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: DialJack.3.1
+    Text: "No need to bust my chops, just tell me where to go.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to unit KB11.
+      Targets:
+      - Jack.2.1.S
+      - Jack.2.1.S
+      - Jack.2.1.S
+      - Jack.2.1.F
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you.
+      Targets:
+      - TheGameBroke
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: "I guess I\u2019ll start over!"
+      Targets:
+      - Start
+      RequiredFlags: []
+      NotAllowedFlags: []

@@ -1,3 +1,12 @@
+Team:
+
+Joy O'Connell - Story/Design 0 "@gamerwhompus"
+Adrian Jones - Programming - "AAJones@my.harrisburgu.edu"
+Jesse "Archimagus" Pascoe - Programming "@JessePascoe"
+
+
+Special Thanks To:
+
 "Hard Boiled" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0 License
 http://creativecommons.org/licenses/by/3.0/
@@ -5,3 +14,11 @@ http://creativecommons.org/licenses/by/3.0/
 "Crinoline Dreams" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0 License
 http://creativecommons.org/licenses/by/3.0/
+
+"Parchement Texture"
+VWolfdog
+http://opengameart.org/content/parchement-textures
+
+"GUI Buttons"
+Scribe
+http://opengameart.org/content/gui-buttons

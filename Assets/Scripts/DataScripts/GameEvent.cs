@@ -18,20 +18,31 @@ public class GameEvent
 public class EventOption
 {
 	public string Text = string.Empty;
-	public List<string> Targets = new List<string>();
+	public List<EventTarget> Targets = new List<EventTarget>();
 	public List<string> RequiredFlags = new List<string>();
 	public List<string> NotAllowedFlags = new List<string>();
 
-	public string Target
+	public EventTarget Target
 	{
 		get
 		{
 			if (Targets.IsNullOrEmpty())
 			{
 				Debug.LogError("Event Option " + Text + " does not have any targets");
-				return string.Empty;
+				return null;
 			}
 			return Targets[Random.Range(0, Targets.Count)];
 		}
+	}
+}
+[System.Serializable]
+public class EventTarget
+{
+	public string Key;
+	public bool ShouldWait;
+	public EventTarget(string key, bool shouldWait)
+	{
+		Key = key;
+		ShouldWait = shouldWait;
 	}
 }

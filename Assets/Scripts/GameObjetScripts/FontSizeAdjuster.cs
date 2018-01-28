@@ -1,19 +1,35 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
 public class FontSizeAdjuster : MonoBehaviour
 {
 	public float FontSize
 	{
-		get { return (float)text.fontSize; }
-		set { text.fontSize = (int)value; }
+		get
+		{
+			if (text != null)
+				return text.fontSize;
+			if (tmPro != null)
+				return tmPro.fontSize;
+			return 0;
+		}
+		set
+		{
+			if (text != null)
+				text.fontSize = (int)value;
+			if (tmPro != null)
+				tmPro.fontSize = (int)value;
+
+		}
 	}
 	Text text;
+	TextMeshProUGUI tmPro;
 	//Slider slider;
 	void Start()
 	{
 		text = GetComponent<Text>();
+		tmPro = GetComponent<TextMeshProUGUI>();
 		//slider = GameObject.Find("TextSizeSlider").GetComponent<Slider>();
 	}
 	//void Update()

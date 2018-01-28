@@ -22,7 +22,7 @@ public class GameEventDatabaseEditor : EditorWindow
 	private List<GameEventDatabase> databases;
 
 	private string lastFolder = string.Empty;
-	private const string DATABASE_PATH = @"Assets/Resource/Database/";
+	private const string DATABASE_PATH = @"Assets/Resources/Database/";
 
 	private GameEventDatabase currentDatabase;
 	private Vector2 _scrollPos;
@@ -212,15 +212,22 @@ public class GameEventDatabaseEditor : EditorWindow
 			}
 		}
 		//{
+			
 		//	currentDatabase.textPath = EditorGUILayout.TextField(currentDatabase.textPath);
 		//	var button = GUILayout.Button("Yes");
 		//	if (!currentDatabase.textPath.IsNullOrEmpty() && button)
 		//	{
+		//		Debug.Log("Parsing " + currentDatabase.textPath);
 		//		WWW www = new WWW(currentDatabase.textPath);
-		//		var startTime =  System.DateTime.Now;
-		//		while(!www.isDone)
+		//		var startTime = System.DateTime.Now;
+		//		while (!www.isDone)
 		//		{
-					
+		//			System.Threading.Thread.Sleep(100);
+		//			if ((DateTime.Now - startTime).TotalSeconds > 5)
+		//			{
+		//				Debug.LogError("Timed out waiting for web page");
+		//				return;
+		//			}
 		//		}
 		//		ParseDatabaseText(www.text);
 		//	}
@@ -244,7 +251,7 @@ You Died because the game developers didn’t write a scenario to handle that la
 		currentDatabase.Clear();
 		var eventRegex = new Regex(@"\[[\s\S]+?(?=;)", RegexOptions.Multiline);
 		var keyAndTextRegex = new Regex(@"\[(?<key>.+?)\] ?(?<flags>{[\w,. !:/]+})?(\r\n)?(?<text>[\s\S]+?)(?=[<;])", RegexOptions.Multiline);
-		var optionRegex = new Regex("(?<flags><[!,\\w ]*>) ?(?<text>[\\s\\S]+?\\]) *(?:\n|\r|\r\n)", RegexOptions.Multiline);
+		var optionRegex = new Regex(@"(?<flags><[!,\w. ]*>) ?(?<text>[\s\S]+?\]) *(?:\n|\r|\r\n)", RegexOptions.Multiline);
 		var targetRegex = new Regex(@"\[(?<target>.+?)\]", RegexOptions.Multiline);
 		var choiceTextRegex = new Regex(@"^([\s\S]+?(?=\[))", RegexOptions.Multiline);
 		var flagsRegex = new Regex(@"!?[\w:./]+");
@@ -323,7 +330,10 @@ You Died because the game developers didn’t write a scenario to handle that la
 				var targetMatches = targetRegex.Matches(omText.Value);
 				foreach (Match tm in targetMatches)
 				{
-					eo.Targets.Add(tm.Groups["target"].Value);
+					string target = tm.Groups["target"].Value;
+					bool shouldWait = target.StartsWith("#");
+					target = target.TrimStart('#');
+					eo.Targets.Add(new EventTarget(target, shouldWait));
 				}
 				e.Options.Add(eo);
 			}
@@ -455,14 +465,15 @@ You Died because the game developers didn’t write a scenario to handle that la
 						EditorUtility.SetDirty(currentDatabase);
 						return;
 					}
-					t[j] = GUILayout.TextField(t[j]);
+					t[j].Key = GUILayout.TextField(t[j].Key);
+					t[j].ShouldWait = GUILayout.Toggle(t[j].ShouldWait, "Wait");
 					if (GUILayout.Button("→", GUILayout.Width(25)))
-						selectedEvent = currentDatabase.IndexOf(t[j]);
+						selectedEvent = currentDatabase.IndexOf(t[j].Key);
 					EditorGUILayout.EndHorizontal();
 				}
 				if (GUILayout.Button("+", GUILayout.Width(100)))
 				{
-					o[i].Targets.Add("");
+					o[i].Targets.Add(new EventTarget("", false));
 				}
 				EditorGUILayout.Space();
 				EditorGUILayout.EndVertical();
@@ -563,8 +574,8 @@ You Died because the game developers didn’t write a scenario to handle that la
 						for (int k = 0; k < o.Targets.Count; k++)
 						{
 							var t = o.Targets[k];
-							eventCache.Add(t);
-							var targetEvent = currentDatabase[t];
+							eventCache.Add(t.Key);
+							var targetEvent = currentDatabase[t.Key];
 							if (targetEvent.Key == "TheGameBroke")
 								Debug.LogError("Event: " + i + " : " + e.Key + " Option " + j + " target " + k + " : " + t + " caused an access to TheGameBroke event");
 						}

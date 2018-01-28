@@ -7,65 +7,58 @@ using System.Linq;
 public class GameEventDatabase : ScriptableObject
 {
 	[SerializeField]
-	private List<GameEvent> database;
-	public string textPath;
+	private List<GameEvent> _database;
+	public string NextEvent = "Start";
+
 
 	void OnEnable()
 	{
-		if (database == null)
-			database = new List<GameEvent>();
-		//if (!database.Any(g => g.Key == "TheGameBroke"))
-		//{
-		//	database.Add(new GameEvent()
-		//	{
-		//		Key = "TheGameBroke",
-		//		Text = "You Died because the game developers didn’t write a scenario to handle that last choice.",
-		//		Options = new List<EventOption> { new EventOption { Text = "Well damn, I guess I’ll start over!.", Targets = new List<string> { "[Start]" } } }
-		//	});
-		//}
+		if (_database == null)
+			_database = new List<GameEvent>();
 	}
 
 	public int Add(GameEvent e)
 	{
-		database.Add(e);
-		return database.Count - 1;
+		_database.Add(e);
+		return _database.Count - 1;
 	}
 
 	public void Remove(GameEvent e)
 	{
-		database.Remove(e);
+		_database.Remove(e);
 	}
 
 	public void RemoveAt(int index)
 	{
-		database.RemoveAt(index);
+		_database.RemoveAt(index);
 	}
 	public void Clear()
 	{
-		database.Clear();
+		_database.Clear();
 	}
 
 	public int Count
 	{
-		get { return database.Count; }
+		get { return _database.Count; }
 	}
 
 	public int IndexOf(string key)
 	{
-		return database.IndexOf(this[key]);
+		return _database.IndexOf(this[key]);
 	}
 
 	int depth = 0;
+
 	public GameEvent this[int key]
 	{
 		get
 		{
 			depth = 0;
-			return database[key];
+			return _database[key];
 		}
 		set
 		{
-			database[key] = value;
+			_database[key] = value;
 		}
 	}
 	public GameEvent this[string key]
@@ -79,7 +72,7 @@ public class GameEventDatabase : ScriptableObject
 				Debug.LogError("Infinite loop in GameEventDatabase string indexer");
 				return null;
 			}
-			var events = database.Where(l => l.Key == key);
+			var events = _database.Where(l => l.Key == key);
 			if (events.IsNullOrEmpty())
 			{
 				//Debug.LogError("There is no event with key [" + key + "]");

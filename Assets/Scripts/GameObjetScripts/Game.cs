@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +11,13 @@ public class Game : MonoBehaviour
 	[SerializeField]
 	ChoiceButton _choiceButtonPrefab;
 	[SerializeField]
-	GameEventDatabase _eventDatabase;
+	GameEventDatabase []_eventDatabases;
 	[SerializeField]
 	ScrollRect _textAreaScrollView;
 	[SerializeField]
 	Transform _choicesArea;
 
-	Text _eventText;
+	TextMeshProUGUI _eventText;
 	StringBuilder _story = new StringBuilder();
 	HashSet<string> _flags = new HashSet<string>();
 	
@@ -24,33 +25,56 @@ public class Game : MonoBehaviour
 
 	void Start()
 	{
-		_eventText = _textAreaScrollView.GetComponentInChildren<Text>();
-		if (_eventDatabase == null)
+		_audioElement = GetComponent<AudioSource>();
+		_eventText = _textAreaScrollView.GetComponentInChildren<TextMeshProUGUI>();
+		if (_eventDatabases.IsNullOrEmpty())
 		{
 			Debug.Log("GameEventDatabase not set, looking for one in resources.");
-			_eventDatabase = Resources.FindObjectsOfTypeAll<GameEventDatabase>().First();
+			_eventDatabases = Resources.FindObjectsOfTypeAll<GameEventDatabase>()?.ToArray();
 		}
-		if (_eventDatabase == null)
+		if (_eventDatabases.IsNullOrEmpty())
 			Debug.LogError("Unable to find a GameEventDatabase.");
-		GoToEvent("Start");
+		GoToEvent(_eventDatabases[0], "Start");
 	}
 	IEnumerator UpdateScroll()
 	{
 		yield return null;
 		_textAreaScrollView.verticalNormalizedPosition = 0;
 	}
-	void GoToEvent(string key)
+	void GoToEvent(GameEventDatabase database, EventTarget target)
+	{
+		if(target.ShouldWait)
+		{
+			database.NextEvent = target.Key;
+			StartCoroutine(startRandomEvent());
+
+		}
+		else
+		{
+			GoToEvent(database, target.Key);
+		}
+	}
+	IEnumerator startRandomEvent()
+	{
+		_eventText.text = "<color=#dfdfdf>" + _story.ToString() + "</color>";
+		ClearButtons();
+
+		yield return new WaitForSeconds(Random.Range(3.0f, 5.0f));
+		var db = _eventDatabases[Random.Range(0, _eventDatabases.Length)];
+		GoToEvent(db, db.NextEvent);
+
+	}
+	void GoToEvent(GameEventDatabase database, string key)
 	{
 		if (key == "Start")
 		{
 			_story = new StringBuilder();
-			_audioElement = GetComponent<AudioSource>();
 		}
-		var e = _eventDatabase[key];
-		_eventText.text = "<color=grey>" + _story.ToString() + "</color>" + "<color=white>" + e.Text + "</color>";
+		var e = database[key];
+		_eventText.text = "<color=#dfdfdf>" + _story.ToString() + "</color>" + e.Text;
 		_story.Append(e.Text);
 		StartCoroutine(UpdateScroll());
-		
+
 
 		e.Flags.ForEach(f => _flags.Add(f));
 		e.ClearFlags.ForEach(f => _flags.RemoveWhere(f2 => f2 == f));
@@ -64,10 +88,7 @@ public class Game : MonoBehaviour
 				continue;
 			opts.Add(opt);
 		}
-		for(int i = 0; i < _choicesArea.childCount; i++)
-		{
-			Destroy(_choicesArea.GetChild(i).gameObject);
-		}
+		ClearButtons();
 
 		foreach (var opt in e.Options)
 		{
@@ -79,7 +100,7 @@ public class Game : MonoBehaviour
 			var o = opt;
 			var b = Instantiate(_choiceButtonPrefab);
 			b.ChoiceText = o.Text;
-			b.onClick.AddListener(() => GoToEvent(o.Target));
+			b.onClick.AddListener(() => GoToEvent(database, o.Target));
 			b.transform.SetParent(_choicesArea, false);
 		}
 		/* TODO FIX MULTIPLE SOUNDS */
@@ -91,7 +112,7 @@ public class Game : MonoBehaviour
 			var ac = Resources.Load<AudioClip>(soundId);
 			if (ac != null)
 			{
-				
+
 				if (_audioElement != null)
 				{
 					//audioElement.PlayOneShot(ac, soundVolume);
@@ -105,5 +126,13 @@ public class Game : MonoBehaviour
 				Debug.LogError("No audio clip found for " + soundId);
 			}
 		}
-	 }
+	}
+
+	private void ClearButtons()
+	{
+		for (int i = 0; i < _choicesArea.childCount; i++)
+		{
+			Destroy(_choicesArea.GetChild(i).gameObject);
+		}
+	}
 }

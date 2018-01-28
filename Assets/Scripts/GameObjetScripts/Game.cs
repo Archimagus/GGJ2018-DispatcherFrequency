@@ -9,9 +9,11 @@ public class Game : MonoBehaviour
 {
 	[SerializeField]
 	ChoiceButton _choiceButtonPrefab;
-	[SerializeField]
-	GameEventDatabase _eventDatabase;
-	[SerializeField]
+	//[SerializeField]
+	//GameEventDatabase[] _eventDatabases;
+    [SerializeField]
+    GameEventDatabase _eventDatabase;
+    [SerializeField]
 	ScrollRect _textAreaScrollView;
 	[SerializeField]
 	Transform _choicesArea;
@@ -21,20 +23,36 @@ public class Game : MonoBehaviour
 	HashSet<string> _flags = new HashSet<string>();
 	
 	AudioSource _audioElement;
+    GameEventDatabase currentDB;
+    //Random random = new Random();
 
-	void Start()
+    void Start()
 	{
 		_eventText = _textAreaScrollView.GetComponentInChildren<Text>();
-		if (_eventDatabase == null)
-		{
-			Debug.Log("GameEventDatabase not set, looking for one in resources.");
-			_eventDatabase = Resources.FindObjectsOfTypeAll<GameEventDatabase>().First();
-		}
-		if (_eventDatabase == null)
-			Debug.LogError("Unable to find a GameEventDatabase.");
-		GoToEvent("Start");
+		//if (_eventDatabases.Length < 1)
+		//{
+		//	Debug.Log("GameEventDatabase not set, looking for one in resources.");
+  //          _eventDatabases = Resources.FindObjectsOfTypeAll<GameEventDatabase>();
+		//}
+		//if (_eventDatabases.Length < 1)
+		//	Debug.LogError("Unable to find a GameEventDatabase.");
+
+        if (_eventDatabase == null)
+        {
+            Debug.Log("GameEventDatabase not set, looking for one in resources.");
+            _eventDatabase = Resources.FindObjectsOfTypeAll<GameEventDatabase>().First();
+        }
+        if (_eventDatabase == null)
+            Debug.LogError("Unable to find a GameEventDatabase.");
+
+        GoToEvent("Start");
 	}
-	IEnumerator UpdateScroll()
+    void Update()
+    {
+        //int randomNumber = Random.Range(0, _eventDatabases.Length - 1);
+        //currentDB = _eventDatabases[randomNumber];
+    }
+    IEnumerator UpdateScroll()
 	{
 		yield return null;
 		_textAreaScrollView.verticalNormalizedPosition = 0;
@@ -46,7 +64,10 @@ public class Game : MonoBehaviour
 			_story = new StringBuilder();
 			_audioElement = GetComponent<AudioSource>();
 		}
-		var e = _eventDatabase[key];
+
+        var e = _eventDatabase[key];
+        //var e = currentDB[key];        
+
 		_eventText.text = "<color=grey>" + _story.ToString() + "</color>" + "<color=white>" + e.Text + "</color>";
 		_story.Append(e.Text);
 		StartCoroutine(UpdateScroll());

@@ -635,7 +635,7 @@ PlayerSettings:
     Collab: 1
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 88487801-c456-48a5-ba1b-a72578310ca8
   projectName: GGJ2018
   organizationId: ggj-2018-jjam

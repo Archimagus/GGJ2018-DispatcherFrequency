@@ -1,0 +1,141 @@
+﻿[Start]
+Dispatcher, this is KB11.Bzzzzzzzzt--have a situation at the church--zzzzz--vadals. Please report.
+<>Jack is on his way.[DialJack.3.1]
+<>I’m sending Dick, he’ll be there in a jiffy.[DialDick.3.1]
+<>Barb will be there soon.[DialBarb.3.1]
+;
+
+
+[DialDick.3.1]
+Where am I going? Over.
+<>Head to unit KB11. Over.[Dick.3.1.S][Dick.3.1.F][Dick.3.1.F][Dick.3.1.F]
+<>Whoops, sorry to bother you. Over.[Start]
+;
+
+
+[DialBarb.3.1]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to unit KB11.[Barb.3.1.S][Barb.3.1.S][Barb.3.1.S][Barb.3.1.F][Barb.3.1.F]
+<>Whoops, sorry to bother you.[Start]
+;
+
+
+[DialJack.3.1]
+No need to bust my chops, just tell me where to go.
+<>Head to unit KB11.[Jack.3.1.S]
+<>Whoops, sorry to bother you.[Start]
+;
+
+
+[Dick.3.1.S]{3.1.Fail}
+I followed the prints--zzzzzzt--and, long story short, I found the spray-paint in a dumpster. Also, I’m covered in brambles.Over.
+<>So we know where to watch out for them again.Over.[3.2]
+;
+
+
+[Dick.3.1.F]{3.1.Fail}
+I got lost in a--bzzzzzzz--and now I can’t even find the prints.
+<>Damn.[3.2]
+;
+
+
+[Barb.3.1.S]{3.1.Fail}
+You’ll never guess what I found! The vandal’s paint! It was in a dumpster. We can have the station check for prints.
+<>Thanks, Barb.[3.2]
+;
+
+
+[Barb.3.1.F]{3.1.Fail}
+I’d need a microscope to track those prints, Hun. 
+<>Thanks for looking, Barb.[3.2]
+;
+[Jack.3.1.S]{3.1.S}
+I found a bunch of spray paint, and a Pete’s Malt uniform in a dumpster, Dispatcher. One of the employees had paint on his hands, so he booked him for vandalism.
+<>Good work, Jack.[3.2]
+;
+
+
+[DS3.2]
+Dispatcher?
+<3.1.S> What’s the skinny, KB11?[3.3]
+<3.1.Fail> Yes, KB11?[3.2]
+;
+
+
+[3.3]
+Do you think it’s going to rain? It’s looks cloudy, and I forgot my umbrella.
+<>I’m sorry, KB11. Stay dry.[3.2]
+;
+
+
+[3.2]
+We have--bbbzzzz--vandal on--zzzzzt street. Please send help.
+<>Dick is on his way.[Dial.Dick.3.2]
+<>I’m sending Jack.[Dial.Jack.3.2]
+<>Barb will be there soon.[Dial.Barb.3.2]
+;
+
+
+[Dial.Dick.3.2]
+Where am I going? Over.
+<>Head to unit KB11. Over.[Dick.3.2.S][Dick.3.2.S][Dick.3.2.F][Dick.3.2.F][Dick.3.2.F]
+<>Whoops, sorry to bother you. Over.[3.2]
+;
+
+
+[Dial.Barb.3.2.]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to unit KB11.[Barb.3.2.S][Barb.3.2.F][Barb.3.2.F][Barb.3.2.F][Barb.3.2.F]
+<>Whoops, sorry to bother you.[3.2]
+;
+
+
+[Dial.Jack.3.2]
+No need to bust my chops, just tell me where to go.
+<>Head to unit KB11.[Jack.3.2.S][Jack.3.2.S][Jack.3.2.S][Jack.3.2.F]
+<>Whoops, sorry to bother you.[3.2]
+;
+
+
+[Dick.3.2.S]
+We found the kid--gets this, he works at Pete’s Malt. Hands covered in paint.
+<>Get that kid of the street. Over.[break]
+;
+
+
+[Dick.3.2.F]
+No sign of the kid. He must’ve already cleaned up.
+<>Can’t win ‘em all. Thanks. Over.[break]
+;
+
+
+[Barb.3.2.S]
+How many times am I going to have to visit Pete’s Malt without you? We caught the kid, by the way. He was one of the employees.
+<>Sorry, Barb. Thanks for handling that.[break]
+;
+
+
+[Barb.3.2.F]
+No sign of the brat. All this walking has made me hungry, though.
+<>Go each and I’ll talk to you later.[break]
+;
+
+
+[Jack.3.2.S]
+I found the kid working at Pete’s Malt. His hands were covered in paint.
+<>Good work, getting him off the street, Jack.[break]
+;
+
+
+[Jack.3.2.F]
+I found more spray paint, Dispatcher, but no vandal.
+<>Guess we’ll have to keep an eye out.[break]
+;
+
+
+[break]
+. . .
+<>. . .
+;

@@ -1,0 +1,1642 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff15f0180df5644bb530ae30f30ecf2, type: 3}
+  m_Name: Dispatch4
+  m_EditorClassIdentifier: 
+  _database:
+  - Key: TheGameBroke
+    Text: "You Died because the game developers didn\u2019t write a scenario to handle
+      that last choice.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I guess I\u2019ll start over!"
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Start
+    Text: "\u201CThis is Sergeant--zzzzt, calling all cars! Calling--bzzzzzzt--cars!
+      We have gunshots in the neighborhood of--bzzzzz.\u201D\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Jack is on his way!
+      Targets:
+      - Key: Dial.Jack.4.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Dick can handle standoffs, expect him soon.
+      Targets:
+      - Key: Dial.Jack.4.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: "Barb can handle emergency, she\u2019ll be there in a min."
+      Targets:
+      - Key: Dial.Barb.4.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dial.Dick.4.1
+    Text: "Where am I going? Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant right away! Over.
+      Targets:
+      - Key: Dick.4.1.S
+        ShouldWait: 0
+      - Key: Dick.4.1.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you. Over.
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dial.Barb.4.1
+    Text: "Hello, Dahling. Finally takin\u2019 me to lunch?\r\n. . .No? One of these
+      days. Where are you sendin\u2019 me, then?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant right away!
+      Targets:
+      - Key: Barb.4.1.S
+        ShouldWait: 0
+      - Key: Barb.4.1.S
+        ShouldWait: 0
+      - Key: Barb.4.1.S
+        ShouldWait: 0
+      - Key: Barb.4.1.S
+        ShouldWait: 0
+      - Key: Barb.4.1.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you.
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dial.Jack.4.1
+    Text: "No need to bust my chops, just tell me where to go.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to the Sergeant right away!
+      Targets:
+      - Key: Jack.4.1.S
+        ShouldWait: 0
+      - Key: Jack.4.1.F
+        ShouldWait: 0
+      - Key: Jack.4.1.F
+        ShouldWait: 0
+      - Key: Jack.4.1.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you.
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.4.1.S
+    Text: "You wouldn\u2019t believe it, Dispatcher. We had a standoff, two guys against
+      four of our guys. They took hostages, so we couldn\u2019t shoot.\r\nFinally,
+      one of the hostages punched the guy and all hell broke loose. We killed the
+      two men. And found cocaine on their bodies. Think it might\u2019ve been gang
+      related. Over.\r\n"
+    ImageId: 
+    Flags:
+    - success
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Are you injured?Over.
+      Targets:
+      - Key: D.4.1.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: D.4.1.1
+    Text: "No, I\u2019m okay. Sometimes I wish it were me in that control booth, Dispatch.
+      Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I\u2019m glad you\u2019re okay, Dick. Go home and rest."
+      Targets:
+      - Key: DS4.2
+        ShouldWait: 1
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.4.1.F
+    Text: "You wouldn\u2019t believe it, Dispatcher. We had a standoff, two guys against
+      four of our guys. They took hostages, so we couldn\u2019t shoot.\r\nFinally,
+      one of the hostages punched the guy and all hell broke loose. We killed the
+      two men.\r\n"
+    ImageId: 
+    Flags:
+    - fail
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'You did what you had to, Dick. Go home and rest. '
+      Targets:
+      - Key: DS4.2
+        ShouldWait: 1
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.4.1.S
+    Text: "Holy cow, Dahling, you missed one heck of a fight. The men took hostages
+      during the shootout, an\u2019 we couldn\u2019t fire back. I had to hide in the
+      ambulance \u2018til some scuffle happened between the two men.\r\nWell, they
+      went and shot one another! One died, but I got to save the other. And don\u2019t
+      you know, when I was mendin\u2019 him up, I saw some other man run out the back!\r\n"
+    ImageId: 
+    Flags:
+    - success
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: The one man you saved, where is he now?
+      Targets:
+      - Key: 4.1.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 4.1.2
+    Text: "He\u2019s in the hospital. They\u2019ll have to patch him up before he
+      goes anywhere.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Thanks, Barb. I\u2019m glad you\u2019re okay."
+      Targets:
+      - Key: DS4.2
+        ShouldWait: 1
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.4.1.F
+    Text: "Holy cow, Dahling, you missed one heck of a fight. The men took hostages
+      during the shootout, an\u2019 we couldn\u2019t fire back. I had to hide in the
+      ambulance \u2018til some scuffle happened between the two men.\r\nDon\u2019t
+      you know, they went and shot each other! There was nothing we could do. They
+      were dead when they hit the ground.\r\n"
+    ImageId: 
+    Flags:
+    - fail
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: You did what you could, Barb. Thanks.
+      Targets:
+      - Key: DS4.2
+        ShouldWait: 1
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Jack.4.1.S
+    Text: "Dispatch? This is KB11.\r\n"
+    ImageId: 
+    Flags:
+    - Jack.Injured
+    - fail
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: KB11, I hear you. What happened to Jack Martin?
+      Targets:
+      - Key: J.4.1.1.S
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: J.4.1.1.S
+    Text: "He was shot. He\u2019s on his way to the hospital now, I don\u2019t know
+      any more details.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: KB11, I need you to keep me up to date.
+      Targets:
+      - Key: J.4.1.2.S
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: J.4.1.2.S
+    Text: "I will, Dispatch. I\u2019ll tell you, it must be a blessing in disguise
+      to sit safe in that room.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Some days it is, KB11. Stay safe.
+      Targets:
+      - Key: DS4.2
+        ShouldWait: 1
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Jack.4.1.F
+    Text: "{fail}\r\nDispatch? This is KB11.\r\n"
+    ImageId: 
+    Flags:
+    - Jack.Dead
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: KB11, I hear you. What happened to Jack Martin?
+      Targets:
+      - Key: J.4.1.1.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: J.4.1.1.F
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: KB11? Can you hear me?
+      Targets:
+      - Key: J.4.1.2.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: J.4.1.2.F
+    Text: "He\u2019s dead, Dispatch.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: What?!
+      Targets:
+      - Key: J.4.1.3.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: J.4.1.3.F
+    Text: "I\u2019m sorry, Dispatch. He was shot and. . .before he--bzzzzt--he was
+      gone.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: . . .
+      Targets:
+      - Key: J.4.1.5
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: J.4.1.5
+    Text: "Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Over.
+      Targets:
+      - Key: DS4.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DS4.2
+    Text: "<fail>What else could I have done? It was a hell of a week.[END]\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: What else could I have done? It was a hell of a week.
+      Targets:
+      - Key: END
+        ShouldWait: 0
+      RequiredFlags:
+      - fail
+      NotAllowedFlags: []
+    - Text: We had to make sure we stopped those gangs.
+      Targets:
+      - Key: 4.2
+        ShouldWait: 1
+      RequiredFlags:
+      - success
+      NotAllowedFlags: []
+  - Key: 4.2
+    Text: "This is Sergeant--bzzzzzt--with a--zzzzz--opportunity, Dispatch. We have
+      intel that the drugs we found on the two men came from--bzzzzzzt--gang. We think
+      they\u2019re hiring a--bzzzz--for a prison break. We need people to take care
+      of a few things.\r\nFirst, someone has to do a controlled leak to the Daily--bzzzzzz.
+      Who would you like to send?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Dick Wilson has the most information, he should go '
+      Targets:
+      - Key: Dick.Press
+        ShouldWait: 0
+      - Key: Barb.Press
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Jack Martin is the most careful, he should go.
+      Targets:
+      - Key: Jack.Press
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.Press
+    Text: "Next is to pick up supplies from Pittsburgh. They\u2019re lending us guns
+      and dogs.\r\n"
+    ImageId: 
+    Flags:
+    - d.pr
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Barb Moore has the most driving experience, she should go.
+      Targets:
+      - Key: Barb.Pitt
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: 'Jack Martin knows the force the best, he should go. '
+      Targets:
+      - Key: Jack.Pitt2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.Pitt
+    Text: "Last is to coordinate with the prison guards.\r\n"
+    ImageId: 
+    Flags:
+    - b.pi
+    - j.prison
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Jack Martin has the most coworkers there, he should go.
+      Targets:
+      - Key: Are you sure
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Are you sure
+    Text: "<d.pr>Dick Wilson is leaking information to the press.[Dick.Press]\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Dick Wilson is leaking information to the press.
+      Targets:
+      - Key: Dick.Press
+        ShouldWait: 0
+      RequiredFlags:
+      - d.pr
+      NotAllowedFlags: []
+    - Text: Barb Moore is leaking information to the press.
+      Targets:
+      - Key: Barb.Press
+        ShouldWait: 0
+      RequiredFlags:
+      - b.pr
+      NotAllowedFlags: []
+    - Text: Jack is leaking information to the press.
+      Targets:
+      - Key: Jack.Press
+        ShouldWait: 0
+      RequiredFlags:
+      - j.pr
+      NotAllowedFlags: []
+    - Text: Dick Wilson is driving to Pittsburgh to pick up supplies.
+      Targets:
+      - Key: Dick.Pitt
+        ShouldWait: 0
+      RequiredFlags:
+      - d.pi
+      NotAllowedFlags: []
+    - Text: Barb Moore is driving to Pittsburgh to pick up supplies.
+      Targets:
+      - Key: Barb.Pitt
+        ShouldWait: 0
+      RequiredFlags:
+      - b.pi
+      NotAllowedFlags: []
+    - Text: Jack Martin is driving to Pittsburgh to pick up supplies.
+      Targets:
+      - Key: Jack.Pitt
+        ShouldWait: 0
+      RequiredFlags:
+      - j.pi
+      NotAllowedFlags: []
+    - Text: Jack Martin is coordinating with the prison guards.
+      Targets:
+      - Key: Jack.Prison
+        ShouldWait: 0
+      RequiredFlags:
+      - j.prison
+      NotAllowedFlags: []
+    - Text: Barb Moore is coordinating with the prison guards.
+      Targets:
+      - Key: Barb.Prison
+        ShouldWait: 0
+      RequiredFlags:
+      - b.prison
+      NotAllowedFlags: []
+    - Text: Dick Wilson is coordinating with the prison guards.
+      Targets:
+      - Key: Dick.Prison
+        ShouldWait: 0
+      RequiredFlags:
+      - d.prison
+      NotAllowedFlags: []
+    - Text: "Yes, we\u2019re ready."
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: "No, that\u2019s not right."
+      Targets:
+      - Key: 4.3
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 4.3
+    Text: "Make sure you don\u2019t fuck this up, Dispatch. I\u2019ll start again.\r\n"
+    ImageId: 
+    Flags:
+    - b.pr
+    - j.pr
+    - d.pi
+    - b.pi
+    - j.pi
+    - j.prison
+    - b.prison
+    - d.prison
+    ClearFlags:
+    - d.pr
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Of course, sir.
+      Targets:
+      - Key: 4.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.Press
+    Text: "Next is to pick up supplies from Pittsburgh. They\u2019re lending us guns
+      and dogs.\r\n"
+    ImageId: 
+    Flags:
+    - b.pr
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Dick knows the most about police, he should travel to Pittsburgh.
+      Targets:
+      - Key: Dick.Pitt2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Jack knows the most about the investigation, he should travel to Pittsburgh.
+      Targets:
+      - Key: Jack.Pitt2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.Pitt2
+    Text: "And that leaves Jack coordinating with the prison guards.\r\n"
+    ImageId: 
+    Flags:
+    - d.pi
+    - j.prison
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: So. . .
+      Targets:
+      - Key: Are you sure
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Jack.Pitt2
+    Text: "And that leaves Dick coordinating with the prison guards.\r\n"
+    ImageId: 
+    Flags:
+    - d.prison
+    - j.pi
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: So. . .
+      Targets:
+      - Key: Are you sure
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Jack.Press
+    Text: "Next is to pick up supplies from Pittsburgh. They\u2019re lending us guns
+      and dogs.\r\n"
+    ImageId: 
+    Flags:
+    - j.pr
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Dick knows the most about police, he should travel to Pittsburg.
+      Targets:
+      - Key: Dick.Pitt3
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Barb knows the most about travel, she should drive to Pittsburg.
+      Targets:
+      - Key: Barb.Pitt.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.Pitt3
+    Text: "That leaves Barb coordinating with the prison guards.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: So. . .
+      Targets:
+      - Key: Are you sure
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.Pitt2
+    Text: "That leaves Dick coordinating with the prison guards.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: So. . .
+      Targets:
+      - Key: Are you sure
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 4.4
+    Text: "Dispatch, I have news from your team. Whom should I patch through?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Let me hear from Dick with the journalists. '
+      Targets:
+      - Key: d.journal.S
+        ShouldWait: 0
+      - Key: d.journal.S
+        ShouldWait: 0
+      - Key: d.journal.F
+        ShouldWait: 0
+      RequiredFlags:
+      - d.pr
+      NotAllowedFlags: []
+    - Text: Let me hear from Barb with the journalists.
+      Targets:
+      - Key: b.journal.S
+        ShouldWait: 0
+      - Key: b.journal.F
+        ShouldWait: 0
+      - Key: b.journal.F
+        ShouldWait: 0
+      RequiredFlags:
+      - b.pr
+      NotAllowedFlags: []
+    - Text: Let me hear from Jack with the journalists.
+      Targets:
+      - Key: j.journal.S
+        ShouldWait: 0
+      - Key: j.journal.S
+        ShouldWait: 0
+      - Key: j.journal.S
+        ShouldWait: 0
+      - Key: j.journal.F
+        ShouldWait: 0
+      RequiredFlags:
+      - j.pr
+      NotAllowedFlags: []
+    - Text: Let me hear from Dick in Pittsburgh.
+      Targets:
+      - Key: d.pitt.S
+        ShouldWait: 0
+      - Key: d.pitt.S
+        ShouldWait: 0
+      - Key: d.pitt.F
+        ShouldWait: 0
+      RequiredFlags:
+      - d.pi
+      NotAllowedFlags: []
+    - Text: Let me hear from Barb in Pittsburgh.
+      Targets:
+      - Key: b.pitt.S
+        ShouldWait: 0
+      - Key: b.pitt.S
+        ShouldWait: 0
+      - Key: b.pitt.S
+        ShouldWait: 0
+      - Key: b.pitt.S
+        ShouldWait: 0
+      RequiredFlags:
+      - b.pi
+      NotAllowedFlags: []
+    - Text: Let met hear from Jack in Pittsburgh.
+      Targets:
+      - Key: j.pitt.S
+        ShouldWait: 0
+      - Key: j.pitt.F
+        ShouldWait: 0
+      - Key: j.pitt.F
+        ShouldWait: 0
+      RequiredFlags:
+      - j.pi
+      NotAllowedFlags: []
+    - Text: Let me hear from Dick at the prison.
+      Targets:
+      - Key: d.prison.S
+        ShouldWait: 0
+      RequiredFlags:
+      - d.prison
+      NotAllowedFlags: []
+    - Text: Let me hear from Barb at the prison.
+      Targets:
+      - Key: b.prison.S
+        ShouldWait: 0
+      - Key: b.prison.S
+        ShouldWait: 0
+      - Key: b.prison.F
+        ShouldWait: 0
+      RequiredFlags:
+      - b.prison
+      NotAllowedFlags: []
+    - Text: Let me hear from Jack at the prison.
+      Targets:
+      - Key: j.prison.S
+        ShouldWait: 0
+      - Key: j.prison.F
+        ShouldWait: 0
+      - Key: j.prison.F
+        ShouldWait: 0
+      RequiredFlags:
+      - j.prison
+      NotAllowedFlags: []
+    - Text: "I\u2019ve talked to everyone."
+      Targets:
+      - Key: 4.5
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: d.journal.S
+    Text: "Dispatch, this is Dick. Are you there? Over.\r\n"
+    ImageId: 
+    Flags:
+    - journal.S
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I\u2019m here. What happened?"
+      Targets:
+      - Key: 6.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.1
+    Text: "I told the Daily---zzzzzzt--that gangsters were planning a prison break,
+      and they pressed me for more details than I could give. I think we\u2019ll see
+      headlines tomorrow. Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - d.pr
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Great, thank you. I hope we can stop this before it gets worse. Over. '
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: "I\u2019m here. What happened?"
+      Targets:
+      - Key: 6.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.2
+    Text: "I met with--bbbbbbbbzzz--at the Daily Mail, and she took one look at me
+      and left. I think she thought it was a sting. Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - d.pr
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Well, it\u2019s too late now. Thanks for trying. Over."
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: b.journal.S
+    Text: "Hun, you there?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Hello, Barb. '
+      Targets:
+      - Key: 6.3
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.3
+    Text: "Dahling, thank you. I haven\u2019t seen Ruby since college. I had no idea
+      she was at the Daily--bzzzzz! I told her about the prison break, and we got
+      to catch up on missed years!\r\nYou\u2019re next, you know. You\u2019ve promised
+      several dinners.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - b.pr
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: I know, Barb. Thank you for talking to her.
+      Targets:
+      - Key: 6.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.4
+    Text: "Does Saturday work for you?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I\u2019ll let you know, Barb. "
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: b.journal.F
+    Text: "Those idiots at the Daily Mail didn\u2019t even show up! I am tired of
+      being stood up!\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - b.pr
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I\u2019m sorry, Barb. But it\u2019s too late now. "
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: j.journal.S
+    Text: "I met with the paper. They ate it up. We should be all set if they follow
+      through.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - j.pr
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Great! Thanks, Jake.
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: d.pitt.S
+    Text: "I met up with the Pittsburgh suppliers. We\u2019re en-route with supplies.
+      Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - d.pi
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 
+      Targets: []
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: d.pitt.F
+    Text: "I met up with the Pittsburgh suppliers, but the dogs escaped and their
+      next order of supplies never came in. They have nothing for us. Over.\r\n"
+    ImageId: 
+    Flags:
+    - supplies.F
+    ClearFlags:
+    - d.pi
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Damnit, what a waste.
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: b.pitt.S
+    Text: "Hey, Hun, can you hear me?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - b.pi
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Yes, Barb, I hear you.
+      Targets:
+      - Key: 6.5
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.5
+    Text: "I met with the sweethearts in Pittsburgh, and we\u2019re heading home now.
+      We should be there in a few hours.\r\n"
+    ImageId: 
+    Flags:
+    - supplies.S
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: j.pittsburgh.S
+    Text: "Dispatch, this is Jake. Do you copy?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - j.pi
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: I hear you, Jake. How is Pittsburg?
+      Targets:
+      - Key: 6.7
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.7
+    Text: "I got the supplies, no problem. We\u2019re driving back now.\r\n"
+    ImageId: 
+    Flags:
+    - supplies.S
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Thanks, Jake. Drive safely.
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: j.pittsburgh.F
+    Text: "Dispatch, this is Jake. I have bad news. Pittsburgh deliveries never came
+      in, so they don\u2019t have anything to spare. We don\u2019t be getting what
+      we asked for.\r\n"
+    ImageId: 
+    Flags:
+    - supplies.F
+    ClearFlags:
+    - j.pi
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Damn, we were counting on that. You did what you could. We\u2019ll see
+        you in a few hours."
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: d.prison.S
+    Text: "Come in, Dispatch. This is Dick reporting from Dauphin County Prison.\r\n"
+    ImageId: 
+    Flags:
+    - prison.S
+    ClearFlags:
+    - d.prison
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: I read you, Dick.
+      Targets:
+      - Key: 6.9
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.9
+    Text: "After talking with the guards, we--zzzzzt.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Dick?
+      Targets:
+      - Key: 6.10
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.10
+    Text: "Dis--zzzzzt. . . .bzzzzzzzz-me?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I can\u2019t hear you."
+      Targets:
+      - Key: 6.11
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.11
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Hello? Do you copy?
+      Targets:
+      - Key: 6.12
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.12
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "We\u2019ve lost connection."
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: b.prison.S
+    Text: "I\u2019m at Dauphin County Pr--zzzzzzz.\r\n"
+    ImageId: 
+    Flags:
+    - prison.S
+    ClearFlags:
+    - b.prison
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Barb? Hello?
+      Targets:
+      - Key: 6.10
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: b.prision.F
+    Text: "Hun, are you there?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - b.prison
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I\u2019m here."
+      Targets:
+      - Key: 6.12
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.12
+    Text: "Those. . .those pigs won\u2019t let me in! They keep telling me \u201Cjail
+      is no place for a woman\u201D and that \u201CI\u2019d be a problem for the inmates.\u201D
+      I swear, they\u2019re almost as bad as the criminals, themselves!\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "They won\u2019t let you in?"
+      Targets:
+      - Key: 6.13
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.13
+    Text: "No! They--zzzzzzt.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Hello? Barb?
+      Targets:
+      - Key: 6.10
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: j.prison.S
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags:
+    - prison.S
+    ClearFlags:
+    - j.prison
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Jake?
+      Targets:
+      - Key: 6.14
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.14
+    Text: "Yes! Sorry, it took so long I wasn\u2019t sure you were there. Yes, I talked
+      to the guards at Dauphin County. They said it wouldn\u2019t--bzzzzzzzt.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Wouldn\u2019t what?"
+      Targets:
+      - Key: 6.10
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: j.prison.F
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags:
+    - j.prison
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Jake?
+      Targets:
+      - Key: 6.15
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.15
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Jake? Hello?!
+      Targets:
+      - Key: 6.16
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.16
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: KB11, do you read me?
+      Targets:
+      - Key: 6.17
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 6.17
+    Text: "Dispatch, I hear you. What\u2019s wrong?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I\u2019ve lost connection at Dauphin County Prison. I need you to follow
+        up. "
+      Targets:
+      - Key: 4.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 4.5
+    Text: "Dispatch, this is Sergeant--zzzzzzt. Be careful, this--bzzzzz--time bomb.
+      Your directions could cost us dearly. Are you ready?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "As ready as I\u2019ll ever be."
+      Targets:
+      - Key: 4.7
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 4.7
+    Text: "Standby for further contact.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Rodger that.
+      Targets:
+      - Key: 4.8
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 4.8
+    Text: "Dispatch, this is Dick.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Did you manage to suspend daily activities?
+      Targets:
+      - Key: prison.2
+        ShouldWait: 0
+      RequiredFlags:
+      - prison.S
+      NotAllowedFlags: []
+    - Text: How are the prisoners?
+      Targets:
+      - Key: prison.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: prison.1
+    Text: "They\u2019re gathered in the cafeteria for lunch. I\u2019m watching for--\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Dick?
+      Targets:
+      - Key: 12.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 12.1
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Dick, do you copy?!
+      Targets:
+      - Key: 12.1
+        ShouldWait: 0
+      - Key: 12.1
+        ShouldWait: 0
+      - Key: 12.1
+        ShouldWait: 0
+      - Key: 12.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 12.2
+    Text: "A small group is--zzzzt--I repeat, a small_bzzzz is armed!\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Fight back!
+      Targets:
+      - Key: 12.3
+        ShouldWait: 0
+      - Key: 12.3
+        ShouldWait: 0
+      - Key: 12.3
+        ShouldWait: 0
+      - Key: 12.3
+        ShouldWait: 0
+      - Key: 12.4
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Run!
+      Targets:
+      - Key: 12.4
+        ShouldWait: 0
+      - Key: 12.13
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 12.13
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Is anyone there?
+      Targets:
+      - Key: 12.15
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 12.15
+    Text: "{d.hurt]\r\n--zzzzzt--hit! I\u2019m under a table in the cafeteria! Repeat--zzzt!\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'I need to send someone his way! '
+      Targets:
+      - Key: Barb.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 12.14
+    Text: "Safety. I repeat, I barricaded several guards in the hall. We can hold
+      them---bzzzz--safety.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "At least Dick\u2019s okay."
+      Targets:
+      - Key: press.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Barb! Barb! Dick is in wounded in the cafeteria! I need you to get there
+        as fast as you can!
+      Targets:
+      - Key: 12.16
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 12.16
+    Text: "I\u2019m going!\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Shit!
+      Targets:
+      - Key: press1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: prison.2
+    Text: "Yes, the prisoners are locked in their cells. Guars are searching each
+      cell one by one. Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Good. Carry on. Over. '
+      Targets:
+      - Key: press.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: press.1
+    Text: "Dispatch, this is KB11. Thanks to the local reports, there\u2019s no traffic
+      inside the prison today. Roads are clear, no visitors.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Thanks for the update, KB11.
+      Targets:
+      - Key: supplies.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: supplies.1
+    Text: "This is Jack, Dispatch. I\u2019m at the entrance with our guard dogs.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Did you get what the team needed in Pittsburgh?
+      Targets:
+      - Key: 14.1
+        ShouldWait: 0
+      RequiredFlags:
+      - supplies.S
+      NotAllowedFlags: []
+    - Text: "It\u2019s a shame we didn\u2019t get support from Pittsburgh."
+      Targets:
+      - Key: 14.2
+        ShouldWait: 0
+      RequiredFlags:
+      - supplies.F
+      NotAllowedFlags: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 
+    Text: 
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  - Key: 14.2
+    Text: "I hate to say it, but we can\u2019t do much. I have two trained dogs, but
+      they won\u2019t do much good against a mob.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Let\u2019s hope no one gets that far."
+      Targets:
+      - Key: 18.2
+        ShouldWait: 0
+      - Key: 18.2
+        ShouldWait: 0
+      - Key: 18.2
+        ShouldWait: 0
+      - Key: 18.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Release the hounds!
+      Targets:
+      - Key: 19.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Run!
+      Targets:
+      - Key: 19.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 19.1
+    Text: "Dispatch, do you read me? Dis--bzzzzz--me?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Yes, Sergeant!
+      Targets:
+      - Key: 19.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 19.2
+    Text: "What\u2019s-bzzzzt. There was an explosion and-zzzzzt.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "No, no, it\u2019s all gone wrong! They\u2019re getting away!"
+      Targets:
+      - Key: end
+        ShouldWait: 0
+      RequiredFlags:
+      - run
+      NotAllowedFlags: []
+    - Text: "I can\u2019t save him!"
+      Targets:
+      - Key: end
+        ShouldWait: 0
+      RequiredFlags:
+      - d.hurt
+      NotAllowedFlags: []
+    - Text: All police units to Dauphin County jail!
+      Targets:
+      - Key: end
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: supplies.1
+    Text: "Dispatch, the dogs are taking off!\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Come again, Jack?
+      Targets:
+      - Key: 20.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 20.1
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Jack!
+      Targets:
+      - Key: 20.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 20.2
+    Text: "Hahaha! Some prisons were trying to--bzzzzz--but the dogs--zzzz! Well,
+      I think we have that under control.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Good, good. '
+      Targets:
+      - Key: 20.3
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 20.3
+    Text: "Dispatch, this is Sarg--zzzzzzt. Damn this radio! Look, there\u2019s been
+      an explosion inside, but nobody was hurt. It looks like--bzzzzzz---injured,
+      but I think everyone\u2019s--zzzzt.\r\nGood job, Dispatch. That could have gone
+      much worse.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Thank you, Sir.
+      Targets:
+      - Key: ENDEND
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: END
+    Text: "That could\u2019ve gone better!\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: End
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: ENDEND
+    Text: "Congratulations!\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: New Game
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  NextEvent: Start

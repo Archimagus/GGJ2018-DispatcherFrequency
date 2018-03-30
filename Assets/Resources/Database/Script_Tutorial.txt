@@ -1,0 +1,26 @@
+﻿[Start]
+This is Sargent—bzzzzttt. Dispatch, do you come in?
+<>Yes, Sir, but you’re a bit--[0.1]
+;
+
+
+[0.1]
+Dispatch, I have three people for you to work with this week.
+The first is Dick Wilson, an ex-marine who has served us in the Harrisburg PD faithfully.
+The second is Barb Moore, an EMT with a healing touch.
+The third is gumshoe Jack Martin, who excels at stalking and tracking.
+<>I look forward to working with them.[0.2]
+;
+
+
+[0.2]
+Did you get that, Dispatch? You’ll need to know these people’s strengths to do your job.
+<>Yes, Sir. [break]
+<>No, Sir. Please repeat.[0.1]
+;
+
+
+[break]
+. . .
+<>. . .
+;

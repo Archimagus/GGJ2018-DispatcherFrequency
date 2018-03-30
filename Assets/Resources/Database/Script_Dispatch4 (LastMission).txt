@@ -1,0 +1,560 @@
+﻿[Start]
+“This is Sergeant--zzzzt, calling all cars! Calling--bzzzzzzt--cars! We have gunshots in the neighborhood of--bzzzzz.”
+<>Jack is on his way![Dial.Jack.4.1]
+<>Dick can handle standoffs, expect him soon.[Dial.Jack.4.1]
+<>Barb can handle emergency, she’ll be there in a min.[Dial.Barb.4.1]
+;
+
+
+[Dial.Dick.4.1]
+Where am I going? Over.
+<>Head to the Sergeant right away! Over.[Dick.4.1.S][Dick.4.1.F]
+<>Whoops, sorry to bother you. Over.[Start]
+;
+
+
+[Dial.Barb.4.1]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to the Sergeant right away![Barb.4.1.S][Barb.4.1.S][Barb.4.1.S][Barb.4.1.S][Barb.4.1.F]
+<>Whoops, sorry to bother you.[Start]
+;
+
+
+[Dial.Jack.4.1]
+No need to bust my chops, just tell me where to go.
+<>Head to the Sergeant right away![Jack.4.1.S][Jack.4.1.F][Jack.4.1.F][Jack.4.1.F]
+<>Whoops, sorry to bother you.[Start]
+;
+
+
+[Dick.4.1.S]{success}
+You wouldn’t believe it, Dispatcher. We had a standoff, two guys against four of our guys. They took hostages, so we couldn’t shoot.
+Finally, one of the hostages punched the guy and all hell broke loose. We killed the two men. And found cocaine on their bodies. Think it might’ve been gang related. Over.
+<>Are you injured?Over.[D.4.1.1]
+;
+
+
+[D.4.1.1]
+No, I’m okay. Sometimes I wish it were me in that control booth, Dispatch. Over.
+<>I’m glad you’re okay, Dick. Go home and rest.[#DS4.2]
+;
+
+
+[Dick.4.1.F]{fail}
+You wouldn’t believe it, Dispatcher. We had a standoff, two guys against four of our guys. They took hostages, so we couldn’t shoot.
+Finally, one of the hostages punched the guy and all hell broke loose. We killed the two men.
+<>You did what you had to, Dick. Go home and rest. [#DS4.2]
+;
+
+
+[Barb.4.1.S]{success}
+Holy cow, Dahling, you missed one heck of a fight. The men took hostages during the shootout, an’ we couldn’t fire back. I had to hide in the ambulance ‘til some scuffle happened between the two men.
+Well, they went and shot one another! One died, but I got to save the other. And don’t you know, when I was mendin’ him up, I saw some other man run out the back!
+<>The one man you saved, where is he now?[4.1.2]
+;
+
+
+[4.1.2]
+He’s in the hospital. They’ll have to patch him up before he goes anywhere.
+<>Thanks, Barb. I’m glad you’re okay.[#DS4.2]
+;
+
+
+[Barb.4.1.F]{fail}
+Holy cow, Dahling, you missed one heck of a fight. The men took hostages during the shootout, an’ we couldn’t fire back. I had to hide in the ambulance ‘til some scuffle happened between the two men.
+Don’t you know, they went and shot each other! There was nothing we could do. They were dead when they hit the ground.
+<>You did what you could, Barb. Thanks.[#DS4.2]
+;
+
+
+[Jack.4.1.S]{Jack.Injured, fail}
+Dispatch? This is KB11.
+<>KB11, I hear you. What happened to Jack Martin?[J.4.1.1.S]
+;
+
+
+[J.4.1.1.S]
+He was shot. He’s on his way to the hospital now, I don’t know any more details.
+<>KB11, I need you to keep me up to date.[J.4.1.2.S]
+;
+
+
+[J.4.1.2.S]
+I will, Dispatch. I’ll tell you, it must be a blessing in disguise to sit safe in that room.
+<>Some days it is, KB11. Stay safe.[#DS4.2]
+;
+
+
+[Jack.4.1.F]{Jack.Dead}{fail}
+Dispatch? This is KB11.
+<>KB11, I hear you. What happened to Jack Martin?[J.4.1.1.F]
+;
+
+
+[J.4.1.1.F]
+. . .
+<>KB11? Can you hear me?[J.4.1.2.F]
+;
+
+
+[J.4.1.2.F]
+He’s dead, Dispatch.
+<>What?![J.4.1.3.F]
+;
+
+
+[J.4.1.3.F]
+I’m sorry, Dispatch. He was shot and. . .before he--bzzzzt--he was gone.
+<>. . .[J.4.1.5]
+;
+
+
+[J.4.1.5]
+Over.
+<>Over.[DS4.2]
+;
+
+
+[DS4.2]
+<fail>What else could I have done? It was a hell of a week.[END]
+<success>We had to make sure we stopped those gangs.[#4.2]
+;
+
+
+
+[4.2]
+This is Sergeant--bzzzzzt--with a--zzzzz--opportunity, Dispatch. We have intel that the drugs we found on the two men came from--bzzzzzzt--gang. We think they’re hiring a--bzzzz--for a prison break. We need people to take care of a few things.
+First, someone has to do a controlled leak to the Daily--bzzzzzz. Who would you like to send?
+<>Dick Wilson has the most information, he should go [Dick.Press].
+<>Barb Moore is the most charismatic, she should go.[Barb.Press]
+<>Jack Martin is the most careful, he should go.[Jack.Press]
+;
+
+
+[Dick.Press] {d.pr}
+Next is to pick up supplies from Pittsburgh. They’re lending us guns and dogs.
+<>Barb Moore has the most driving experience, she should go.[Barb.Pitt]
+<>Jack Martin knows the force the best, he should go. [Jack.Pitt2]
+;
+
+
+[Barb.Pitt]{b.pi, j.prison}
+Last is to coordinate with the prison guards.
+<>Jack Martin has the most coworkers there, he should go.[Are you sure]
+;
+
+
+[Are you sure]
+<d.pr>Dick Wilson is leaking information to the press.[Dick.Press]
+<b.pr>Barb Moore is leaking information to the press.[Barb.Press]
+<j.pr>Jack is leaking information to the press.[Jack.Press]
+<d.pi>Dick Wilson is driving to Pittsburgh to pick up supplies.[Dick.Pitt]
+<b.pi>Barb Moore is driving to Pittsburgh to pick up supplies.[Barb.Pitt]
+<j.pi>Jack Martin is driving to Pittsburgh to pick up supplies.[Jack.Pitt]
+<j.prison>Jack Martin is coordinating with the prison guards.[Jack.Prison]
+<b.prison>Barb Moore is coordinating with the prison guards.[Barb.Prison]
+<d.prison>Dick Wilson is coordinating with the prison guards.[Dick.Prison]
+<>Yes, we’re ready.[4.4]
+<>No, that’s not right.[4.3]
+;
+
+
+[4.3] {!d.pr, b.pr, j.pr, d.pi, b.pi, j.pi, j.prison, b.prison, d.prison}
+Make sure you don’t fuck this up, Dispatch. I’ll start again.
+<>Of course, sir.[4.2]
+;
+
+
+[Barb.Press]{b.pr}
+Next is to pick up supplies from Pittsburgh. They’re lending us guns and dogs.
+<> Dick knows the most about police, he should travel to Pittsburgh.[Dick.Pitt2]
+<>Jack knows the most about the investigation, he should travel to Pittsburgh.[Jack.Pitt2]
+;
+
+
+[Dick.Pitt2] {d.pi, j.prison}
+And that leaves Jack coordinating with the prison guards.
+<>So. . .[Are you sure]
+;
+
+
+[Jack.Pitt2]{d.prison, j.pi}
+And that leaves Dick coordinating with the prison guards.
+<>So. . .[Are you sure]
+;
+
+
+[Jack.Press]{j.pr}
+Next is to pick up supplies from Pittsburgh. They’re lending us guns and dogs.
+<>Dick knows the most about police, he should travel to Pittsburg.[Dick.Pitt3]
+<>Barb knows the most about travel, she should drive to Pittsburg.[Barb.Pitt.2]
+;
+
+
+[Dick.Pitt3]
+That leaves Barb coordinating with the prison guards.
+<>So. . .[Are you sure]
+;
+
+
+[Barb.Pitt2]
+That leaves Dick coordinating with the prison guards.
+<>So. . .[Are you sure]
+;
+
+[4.4]
+Dispatch, I have news from your team. Whom should I patch through?
+<d.pr> Let me hear from Dick with the journalists. [d.journal.S][d.journal.S][d.journal.F]
+<b.pr> Let me hear from Barb with the journalists.[b.journal.S][b.journal.F][b.journal.F]
+<j.pr> Let me hear from Jack with the journalists.[j.journal.S][j.journal.S][j.journal.S][j.journal.F]
+<d.pi>Let me hear from Dick in Pittsburgh.[d.pitt.S][d.pitt.S][d.pitt.F]
+<b.pi>Let me hear from Barb in Pittsburgh.[b.pitt.S][b.pitt.S][b.pitt.S][b.pitt.S]
+<j.pi>Let met hear from Jack in Pittsburgh.[j.pitt.S][j.pitt.F][j.pitt.F]
+<d.prison> Let me hear from Dick at the prison.[d.prison.S]
+<b.prison> Let me hear from Barb at the prison.[b.prison.S][b.prison.S][b.prison.F]
+<j.prison> Let me hear from Jack at the prison.[j.prison.S][j.prison.F][j.prison.F]
+<>I’ve talked to everyone.[4.5]
+;
+
+
+[d.journal.S]{journal.S}
+Dispatch, this is Dick. Are you there? Over.
+<>I’m here. What happened?[6.1]
+;
+
+
+[6.1]{!d.pr}
+I told the Daily---zzzzzzt--that gangsters were planning a prison break, and they pressed me for more details than I could give. I think we’ll see headlines tomorrow. Over.
+<>Great, thank you. I hope we can stop this before it gets worse. Over. [4.4]
+
+
+[d.journal.F]{journal.F}
+Dispatch, this is Dick. Are you there? Over.
+<>I’m here. What happened?[6.2]
+;
+
+
+[6.2]{!d.pr}
+I met with--bbbbbbbbzzz--at the Daily Mail, and she took one look at me and left. I think she thought it was a sting. Over.
+<>Well, it’s too late now. Thanks for trying. Over.[4.4]
+;
+
+
+[b.journal.S]
+Hun, you there?
+<>Hello, Barb. [6.3]
+;
+
+
+[6.3]{!b.pr}
+Dahling, thank you. I haven’t seen Ruby since college. I had no idea she was at the Daily--bzzzzz! I told her about the prison break, and we got to catch up on missed years!
+You’re next, you know. You’ve promised several dinners.
+<>I know, Barb. Thank you for talking to her.[6.4]
+;
+
+
+[6.4]
+Does Saturday work for you?
+<>I’ll let you know, Barb. [4.4]
+;
+
+
+[b.journal.F]{!b.pr}
+Those idiots at the Daily Mail didn’t even show up! I am tired of being stood up!
+<>I’m sorry, Barb. But it’s too late now. [4.4]
+;
+
+
+[j.journal.S]{!j.pr}
+I met with the paper. They ate it up. We should be all set if they follow through.
+<>Great! Thanks, Jake.[4.4]
+;
+
+
+[d.pitt.S]{!d.pi}
+I met up with the Pittsburgh suppliers. We’re en-route with supplies. Over.
+<>Oh, good. We await your return]
+;
+
+
+[d.pitt.F]{!d.pi, supplies.F}
+I met up with the Pittsburgh suppliers, but the dogs escaped and their next order of supplies never came in. They have nothing for us. Over.
+<>Damnit, what a waste.[4.4]
+;
+
+
+[b.pitt.S]{!b.pi}
+Hey, Hun, can you hear me?
+<>Yes, Barb, I hear you.[6.5]
+;
+
+
+[6.5]{supplies.S}
+I met with the sweethearts in Pittsburgh, and we’re heading home now. We should be there in a few hours.
+<>Drive safe; we’ll see you soon.[4.4]
+;
+
+
+[j.pittsburgh.S]{!j.pi}
+Dispatch, this is Jake. Do you copy?
+<>I hear you, Jake. How is Pittsburg?[6.7]
+;
+
+
+[6.7]{supplies.S}
+I got the supplies, no problem. We’re driving back now.
+<>Thanks, Jake. Drive safely.[4.4]
+;
+
+
+[j.pittsburgh.F]{!j.pi, supplies.F}
+Dispatch, this is Jake. I have bad news. Pittsburgh deliveries never came in, so they don’t have anything to spare. We don’t be getting what we asked for.
+<>Damn, we were counting on that. You did what you could. We’ll see you in a few hours.[4.4]
+;
+
+
+[d.prison.S]{!d.prison, prison.S}
+Come in, Dispatch. This is Dick reporting from Dauphin County Prison.
+<>I read you, Dick.[6.9]
+;
+
+
+[6.9]
+After talking with the guards, we--zzzzzt.
+<>Dick?[6.10]
+;
+
+
+[6.10]
+Dis--zzzzzt. . . .bzzzzzzzz-me?
+<>I can’t hear you.[6.11]
+;
+
+
+[6.11]
+. . .
+<>Hello? Do you copy?[6.12]
+;
+
+
+[6.12]
+. . .
+<>We’ve lost connection.[4.4]
+;
+
+
+[b.prison.S]{!b.prison, prison.S}
+I’m at Dauphin County Pr--zzzzzzz.
+<>Barb? Hello?[6.10]
+;
+
+
+[b.prision.F]{!b.prison}
+Hun, are you there?
+<>I’m here.[6.12]
+;
+
+
+[6.12]
+Those. . .those pigs won’t let me in! They keep telling me “jail is no place for a woman” and that “I’d be a problem for the inmates.” I swear, they’re almost as bad as the criminals, themselves!
+<>They won’t let you in?[6.13]
+;
+
+
+[6.13]
+No! They--zzzzzzt.
+<>Hello? Barb?[6.10]
+;
+
+
+[j.prison.S]{!j.prison, prison.S}
+. . .
+<>Jake?[6.14]
+;
+
+
+[6.14]
+Yes! Sorry, it took so long I wasn’t sure you were there. Yes, I talked to the guards at Dauphin County. They said it wouldn’t--bzzzzzzzt.
+<>Wouldn’t what?[6.10]
+;
+
+
+[j.prison.F]{!j.prison}
+. . .
+<>Jake?[6.15]
+;
+
+
+[6.15]
+. . .
+<>Jake? Hello?![6.16]
+;
+
+
+[6.16]
+. . .
+<>KB11, do you read me?[6.17]
+;
+
+
+[6.17]
+Dispatch, I hear you. What’s wrong?
+<>I’ve lost connection at Dauphin County Prison. I need you to follow up. [4.4]
+;
+________________
+
+
+[4.5]
+Dispatch, this is Sergeant--zzzzzzt. Be careful, this--bzzzzz--time bomb. Your directions could cost us dearly. Are you ready?
+<>As ready as I’ll ever be.[4.7]
+;
+
+
+[4.7]
+Standby for further contact.
+<>Rodger that.[4.8]
+;
+
+
+[4.8]
+Dispatch, this is Dick.
+<prison.S> Did you manage to suspend daily activities?[prison.2]
+<>How are the prisoners?[prison.1]
+;
+
+
+[prison.1]
+They’re gathered in the cafeteria for lunch. I’m watching for--
+<>Dick?[12.1]
+;
+
+
+[12.1]
+. . .
+<>Dick, do you copy?![12.1][12.1][12.1][12.2]
+;
+
+
+[12.2]
+A small group is--zzzzt--I repeat, a small_bzzzz is armed!
+<>Fight back![12.3][12.3][12.3][12.3][12.4]
+<>Run![12.4][12.13]
+;
+
+
+[12.13]
+. . .
+<>Is anyone there?[12.15]
+;
+
+
+[12.15]{d.hurt]
+--zzzzzt--hit! I’m under a table in the cafeteria! Repeat--zzzt!
+<>I need to send someone his way! [Barb.1]
+;
+
+
+[12.14]
+Safety. I repeat, I barricaded several guards in the hall. We can hold them---bzzzz--safety.
+<>At least Dick’s okay.[press.1]
+
+
+[Barb.1]
+This is Barb.
+<>Barb! Barb! Dick is in wounded in the cafeteria! I need you to get there as fast as you can![12.16]
+;
+
+
+[12.16]
+I’m going!
+<>Shit![press1]
+;
+
+
+[prison.2]
+Yes, the prisoners are locked in their cells. Guars are searching each cell one by one. Over.
+<>Good. Carry on. Over. [press.1]
+;
+
+
+[press.1]
+Dispatch, this is KB11. Thanks to the local reports, there’s no traffic inside the prison today. Roads are clear, no visitors.
+<>Thanks for the update, KB11.[supplies.1]
+;
+
+
+[supplies.1]
+This is Jack, Dispatch. I’m at the entrance with our guard dogs.
+<supplies.S> Did you get what the team needed in Pittsburgh?[14.1]
+<supplies.F> It’s a shame we didn’t get support from Pittsburgh.[14.2]
+;
+
+
+
+
+[14.1]
+Yes, and I have to say; I feel a bit like a movie set surrounded by all these trained dogs. Even if someone gets out the building, they’re not getting way from these hounds.
+<>Good to hear. I trust you to keep us safe.[18.1]
+;
+
+
+[14.2]
+I hate to say it, but we can’t do much. I have two trained dogs, but they won’t do much good against a mob.
+<>Let’s hope no one gets that far.[18.2][18.2][18.2][18.1]
+[18.2]{run}
+Dispatch, we have prisoners running for it. I can’t see which--bzzzzzt.
+<>Release the hounds![19.1]
+<>Run![19.1]
+;
+
+
+[19.1]
+Dispatch, do you read me? Dis--bzzzzz--me?
+<>Yes, Sergeant![19.2]
+;
+
+
+[19.2]
+What’s-bzzzzt. There was an explosion and-zzzzzt.
+<run> No, no, it’s all gone wrong! They’re getting away![end]
+<d.hurt> I can’t save him![end]
+<>All police units to Dauphin County jail![end]
+;
+
+
+[supplies.1]
+Dispatch, the dogs are taking off!
+<>Come again, Jack?[20.1]
+;
+
+
+[20.1]
+. . .
+<>Jack![20.2]
+;
+
+
+[20.2]
+Hahaha! Some prisons were trying to--bzzzzz--but the dogs--zzzz! Well, I think we have that under control.
+<>Good, good. [20.3]
+;
+
+
+[20.3]
+Dispatch, this is Sarg--zzzzzzt. Damn this radio! Look, there’s been an explosion inside, but nobody was hurt. It looks like--bzzzzzz---injured, but I think everyone’s--zzzzt.
+Good job, Dispatch. That could have gone much worse.
+<>Thank you, Sir.[ENDEND]
+;
+
+
+[END]
+That could’ve gone better!
+<>End[Start]
+;
+
+
+[ENDEND]
+Congratulations!
+<>New Game[Start]
+;

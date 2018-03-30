@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff15f0180df5644bb530ae30f30ecf2, type: 3}
+  m_Name: Tutorial
+  m_EditorClassIdentifier: 
+  _database:
+  - Key: TheGameBroke
+    Text: "You Died because the game developers didn\u2019t write a scenario to handle
+      that last choice.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I guess I\u2019ll start over!"
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Start
+    Text: "This is Sargent\u2014bzzzzttt. Dispatch, do you come in?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Yes, Sir, but you\u2019re a bit--"
+      Targets:
+      - Key: 0.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 0.1
+    Text: "Dispatch, I have three people for you to work with this week.\r\nThe first
+      is Dick Wilson, an ex-marine who has served us in the Harrisburg PD faithfully.\r\nThe
+      second is Barb Moore, an EMT with a healing touch.\r\nThe third is gumshoe Jack
+      Martin, who excels at stalking and tracking.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: I look forward to working with them.
+      Targets:
+      - Key: 0.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 0.2
+    Text: "Did you get that, Dispatch? You\u2019ll need to know these people\u2019s
+      strengths to do your job.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: 'Yes, Sir. '
+      Targets:
+      - Key: break
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: No, Sir. Please repeat.
+      Targets:
+      - Key: 0.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: break
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  NextEvent: Start

@@ -1,0 +1,70 @@
+﻿[Start]
+Dispatcher, this is Sarge--zzzzzttt. We have a report that two men are fighting at Trixie’s Bar on--bzzzzzzzzzz. Send back--bbbbbbzzzz.
+<>Barb will be there to clean up.[DialBarb.2.1]
+<>Jack can break that off, expect him soon. [DialJack.2.1]
+<>I’m sending Dick in. [DialDick.2.1]
+;
+
+
+[DialDick.2.1]
+Where am I going? Over.
+<>Head to the Sergeant. Over.[Dick.2.1.S][Dick.2.1.F]
+<>Whoops, sorry to bother you. Over.[Start]
+;
+
+
+[DialBarb.2.1]
+Hello, Dahling. Finally takin’ me to lunch?
+. . .No? One of these days. Where are you sendin’ me, then?
+<>Head to the Sergeant.[Barb.2.1.S][Barb.2.1.S][Barb.2.1.S][Barb.2.1.S][Barb.2.1.F][Barb.2.1.F][Barb.2.1.F]
+<>Whoops, sorry to bother you.[Start]
+;
+
+
+[DialJack.2.1]
+No need to bust my chops, just tell me where to go.
+<>Head to the Sergeant.[Jack.2.1.S][Jack.2.1.S][Jack.2.1.S][Jack.2.1.F]
+<>Whoops, sorry to bother you.[Start]
+;
+
+
+[Dick.2.1.S] {2.1.Interrogation}
+We caught the two men, Dispatcher. Looks like they got in a fight o’er drug money. We’re taking them in for questioning. Over.
+<>Great. Thank you, Dick. Over.[Start]
+;
+
+
+[Dick.2.1.F] {2.1.Wound}
+That was a disaster. One man dead with a--zzzz--stuck in ‘is head, one arrested. Don’t know what else we could do here, Dispatcher. Over.
+<>Take care, Dick. Over.[Start]
+;
+
+
+[Barb.2.1.S] {2.1.SavedLife}
+That was a right mess you sent me to. Two men smashing--zzzzz--over each other’s heads. Had to send him to the hospital!
+He seemed repentant, though.
+<>Good, thank you. I hope we can get some information from him.[break]
+;
+
+
+[Barb.2.1.F]
+I got there and the two guys are nothin’ more than bruises. The Sargeant took them away in cuffs. Not much else we could’ve done.
+<>Thanks, Barb.[break]
+;
+
+
+[Jack.2.1.S]
+Sargeant and I arrested two men. It looks like they had something personal on the other one, but neither one is talking.
+<>It’s up to the guards, now. Thanks.[break]
+;
+
+
+[Jack.2.1.F]
+One of the guys dropped, the other having nailed him with--bzzzzzz. We arrested the other and took him in, but it doesn’t look like there’s anything else we can do.
+<>I appreciate it, Jack.[break]
+;
+
+[break]
+. . .
+<>. . .[break]
+;

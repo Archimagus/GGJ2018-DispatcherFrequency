@@ -39,8 +39,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainScene: MainScene
-  gameScene: GameScene
-  creditsScene: 
+  gameScene: JesseTestScene
+  creditsScene: Credits
 --- !u!224 &224846941853589988
 RectTransform:
   m_ObjectHideFlags: 1

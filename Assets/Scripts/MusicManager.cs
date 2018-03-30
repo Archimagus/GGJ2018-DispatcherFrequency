@@ -30,7 +30,6 @@ public class MusicManager : MonoBehaviour
 			if (Mathf.Abs(_musicVolume - newVal) > 0.01f)
 			{
 				_musicMixerGroup.audioMixer.SetFloat("MusicVolume", LinearToDecibel(newVal));
-				Debug.Log("Setting music to " + newVal);
 			}
 
 			_musicVolume = newVal;

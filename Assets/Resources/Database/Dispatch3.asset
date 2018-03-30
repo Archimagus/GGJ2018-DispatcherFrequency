@@ -1,0 +1,452 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff15f0180df5644bb530ae30f30ecf2, type: 3}
+  m_Name: Dispatch3
+  m_EditorClassIdentifier: 
+  _database:
+  - Key: TheGameBroke
+    Text: "You Died because the game developers didn\u2019t write a scenario to handle
+      that last choice.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I guess I\u2019ll start over!"
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Start
+    Text: "Dispatcher, this is KB11.Bzzzzzzzzt--have a situation at the church--zzzzz--vadals.
+      Please report.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Jack is on his way.
+      Targets:
+      - Key: DialJack.3.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: "I\u2019m sending Dick, he\u2019ll be there in a jiffy."
+      Targets:
+      - Key: DialDick.3.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Barb will be there soon.
+      Targets:
+      - Key: DialBarb.3.1
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialDick.3.1
+    Text: "Where am I going? Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to unit KB11. Over.
+      Targets:
+      - Key: Dick.3.1.S
+        ShouldWait: 0
+      - Key: Dick.3.1.F
+        ShouldWait: 0
+      - Key: Dick.3.1.F
+        ShouldWait: 0
+      - Key: Dick.3.1.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you. Over.
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialBarb.3.1
+    Text: "Hello, Dahling. Finally takin\u2019 me to lunch?\r\n. . .No? One of these
+      days. Where are you sendin\u2019 me, then?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to unit KB11.
+      Targets:
+      - Key: Barb.3.1.S
+        ShouldWait: 0
+      - Key: Barb.3.1.S
+        ShouldWait: 0
+      - Key: Barb.3.1.S
+        ShouldWait: 0
+      - Key: Barb.3.1.F
+        ShouldWait: 0
+      - Key: Barb.3.1.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you.
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DialJack.3.1
+    Text: "No need to bust my chops, just tell me where to go.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to unit KB11.
+      Targets:
+      - Key: Jack.3.1.S
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you.
+      Targets:
+      - Key: Start
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.3.1.S
+    Text: "I followed the prints--zzzzzzt--and, long story short, I found the spray-paint
+      in a dumpster. Also, I\u2019m covered in brambles.Over.\r\n"
+    ImageId: 
+    Flags:
+    - 3.1.Fail
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: So we know where to watch out for them again.Over.
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.3.1.F
+    Text: "I got lost in a--bzzzzzzz--and now I can\u2019t even find the prints.\r\n"
+    ImageId: 
+    Flags:
+    - 3.1.Fail
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Damn.
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.3.1.S
+    Text: "You\u2019ll never guess what I found! The vandal\u2019s paint! It was in
+      a dumpster. We can have the station check for prints.\r\n"
+    ImageId: 
+    Flags:
+    - 3.1.Fail
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Thanks, Barb.
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.3.1.F
+    Text: "I\u2019d need a microscope to track those prints, Hun. \r\n"
+    ImageId: 
+    Flags:
+    - 3.1.Fail
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Thanks for looking, Barb.
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Jack.3.1.S
+    Text: "I found a bunch of spray paint, and a Pete\u2019s Malt uniform in a dumpster,
+      Dispatcher. One of the employees had paint on his hands, so he booked him for
+      vandalism.\r\n"
+    ImageId: 
+    Flags:
+    - 3.1.S
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Good work, Jack.
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: DS3.2
+    Text: "Dispatcher?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "What\u2019s the skinny, KB11?"
+      Targets:
+      - Key: 3.3
+        ShouldWait: 0
+      RequiredFlags:
+      - 3.1.S
+      NotAllowedFlags: []
+    - Text: Yes, KB11?
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags:
+      - 3.1.Fail
+      NotAllowedFlags: []
+  - Key: 3.3
+    Text: "Do you think it\u2019s going to rain? It\u2019s looks cloudy, and I forgot
+      my umbrella.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "I\u2019m sorry, KB11. Stay dry."
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: 3.2
+    Text: "We have--bbbzzzz--vandal on--zzzzzt street. Please send help.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Dick is on his way.
+      Targets:
+      - Key: Dial.Dick.3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: "I\u2019m sending Jack."
+      Targets:
+      - Key: Dial.Jack.3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Barb will be there soon.
+      Targets:
+      - Key: Dial.Barb.3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dial.Dick.3.2
+    Text: "Where am I going? Over.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to unit KB11. Over.
+      Targets:
+      - Key: Dick.3.2.S
+        ShouldWait: 0
+      - Key: Dick.3.2.S
+        ShouldWait: 0
+      - Key: Dick.3.2.F
+        ShouldWait: 0
+      - Key: Dick.3.2.F
+        ShouldWait: 0
+      - Key: Dick.3.2.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you. Over.
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dial.Barb.3.2
+    Text: "Hello, Dahling. Finally takin\u2019 me to lunch?\r\n. . .No? One of these
+      days. Where are you sendin\u2019 me, then?\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to unit KB11.
+      Targets:
+      - Key: Barb.3.2.S
+        ShouldWait: 0
+      - Key: Barb.3.2.F
+        ShouldWait: 0
+      - Key: Barb.3.2.F
+        ShouldWait: 0
+      - Key: Barb.3.2.F
+        ShouldWait: 0
+      - Key: Barb.3.2.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you.
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dial.Jack.3.2
+    Text: "No need to bust my chops, just tell me where to go.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Head to unit KB11.
+      Targets:
+      - Key: Jack.3.2.S
+        ShouldWait: 0
+      - Key: Jack.3.2.S
+        ShouldWait: 0
+      - Key: Jack.3.2.S
+        ShouldWait: 0
+      - Key: Jack.3.2.F
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+    - Text: Whoops, sorry to bother you.
+      Targets:
+      - Key: 3.2
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.3.2.S
+    Text: "We found the kid--gets this, he works at Pete\u2019s Malt. Hands covered
+      in paint.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Get that kid of the street. Over.
+      Targets:
+      - Key: break
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Dick.3.2.F
+    Text: "No sign of the kid. He must\u2019ve already cleaned up.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Can\u2019t win \u2018em all. Thanks. Over."
+      Targets:
+      - Key: break
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.3.2.S
+    Text: "How many times am I going to have to visit Pete\u2019s Malt without you?
+      We caught the kid, by the way. He was one of the employees.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Sorry, Barb. Thanks for handling that.
+      Targets:
+      - Key: break
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Barb.3.2.F
+    Text: "No sign of the brat. All this walking has made me hungry, though.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Go each and I\u2019ll talk to you later."
+      Targets:
+      - Key: break
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Jack.3.2.S
+    Text: "I found the kid working at Pete\u2019s Malt. His hands were covered in
+      paint.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: Good work, getting him off the street, Jack.
+      Targets:
+      - Key: break
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: Jack.3.2.F
+    Text: "I found more spray paint, Dispatcher, but no vandal.\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options:
+    - Text: "Guess we\u2019ll have to keep an eye out."
+      Targets:
+      - Key: break
+        ShouldWait: 0
+      RequiredFlags: []
+      NotAllowedFlags: []
+  - Key: break
+    Text: ". . .\r\n"
+    ImageId: 
+    Flags: []
+    ClearFlags: []
+    SoundIds: []
+    SoundVolumes: []
+    Options: []
+  NextEvent: Start
